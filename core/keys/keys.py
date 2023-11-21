@@ -7,7 +7,7 @@ def setup_default_alphabet():
     """set up common default alphabet.
 
     no need to modify this here, change your alphabet using alphabet.csv"""
-    initial_default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split()
+    initial_default_alphabet = "air bat chat drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split()
     initial_letters_string = "abcdefghijklmnopqrstuvwxyz"
     initial_default_alphabet_dict = dict(
         zip(initial_default_alphabet, initial_letters_string)
@@ -217,6 +217,7 @@ symbol_key_words = {
     "pipe": "|",
     "dub quote": '"',
     "double quote": '"',
+    "double": '"',
     # Currencies
     "dollar": "$",
     "pound": "£",
@@ -235,9 +236,8 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
-    "enter",
     "escape",
+    "end",
     "home",
     "insert",
     "pagedown",
@@ -247,6 +247,8 @@ simple_keys = [
 ]
 
 alternate_keys = {
+    "slap": "enter",
+    "ex": "escape",
     "wipe": "backspace",
     "delete": "backspace",
     #'junk': 'backspace',

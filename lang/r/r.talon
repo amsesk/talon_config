@@ -36,6 +36,10 @@ library <user.code_libraries>:
     key(enter)
 state na: insert("NA")
 
+empty (lisp|list) | index:
+    insert("[]")
+    key(left)
+
 # TODO: migrate to function tag
 ^function define <user.text>$: user.code_private_function(text)
 

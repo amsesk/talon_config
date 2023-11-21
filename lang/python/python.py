@@ -7,6 +7,15 @@ ctx = Context()
 ctx.matches = r"""
 code.language: python
 """
+
+mod.list("vocabulary", desc="additional vocabulary words for python")
+
+ctx.lists["user.vocabulary"] = [
+        "adata",
+        "obs",
+        "var",
+        ]
+
 ctx.lists["user.code_common_function"] = {
     "enumerate": "enumerate",
     "integer": "int",
@@ -312,9 +321,8 @@ class UserActions:
         actions.user.insert_between('"""', '"""')
 
     def code_insert_function(text: str, selection: str):
-        text += f"({selection or ''})"
-        actions.user.paste(text)
-        actions.edit.left()
+        text += f"({selection or ''}"
+        actions.user.insert_between(text, ")")
 
     def code_default_function(text: str):
         actions.user.code_public_function(text)
@@ -326,8 +334,7 @@ class UserActions:
                 text, settings.get("user.code_private_function_formatter")
             )
         )
-
-        actions.user.paste(result)
+        actions.insert(result)
         actions.edit.left()
         actions.edit.left()
 
@@ -337,7 +344,7 @@ class UserActions:
                 text, settings.get("user.code_public_function_formatter")
             )
         )
-        actions.user.paste(result)
+        actions.insert(result)
         actions.edit.left()
         actions.edit.left()
 

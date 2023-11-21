@@ -336,7 +336,7 @@ class UserActions:
 
     def code_insert_function(text: str, selection: str):
         text += f"({selection or ''})"
-        actions.user.paste(text)
+        actions.insert(text)
         actions.edit.left()
 
     def code_private_function(text: str):
@@ -346,7 +346,7 @@ class UserActions:
             )
         )
 
-        actions.user.paste(result)
+        actions.insert(result)
         actions.edit.up()
         actions.edit.up()
         actions.edit.line_end()

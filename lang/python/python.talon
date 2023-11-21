@@ -52,4 +52,15 @@ import <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
 
+empty (lisp|list) | index:
+    insert("[]")
+    key(left)
+
+empty dick:
+    insert("{}")
+    key(left)
+
 from import: user.insert_between("from ", " import ")
+
+hey data: "adata"
+observations: "obs"
